@@ -10,15 +10,21 @@
   </thead>
 
   <tbody>
-  <% @products.each do |p| %>
+  <% @products.each do |product| %>
       <tr>
-        <th><%= p.name %></th>
-        <th><%= p.value %></th>
-        <th><%= p.restaurant&.name %></th>
+        <th><%= product.name %></th>
+        <th><%= product.value %></th>
+        <th><%= product.restaurant&.name %></th>
+        <td><%= link_to 'Show', products_path %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
   </tbody>
-</table> 
+</table>
+<br>
+
+<%= link_to 'New Product', new_product_path %>
 
 
 
