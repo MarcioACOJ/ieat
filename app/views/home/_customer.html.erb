@@ -1,0 +1,25 @@
+<p>Restaurantes</p>
+<table>
+    <thead>
+        <tr>
+            <th>nome</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% Restaurant.all.each do |r| %>
+            <tr>
+                <td><%= r.name %></td>
+                <table>
+                <tbody>
+                    <% r.products.each do |p| %>
+                        <tr>
+                            <td>-> <%= p.name %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+                </table>
+            </tr>
+        <% end %>
+    </tbody>
+</table>  

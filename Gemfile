@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'rails', '~> 6.1.4'
+gem 'rspec-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
@@ -16,6 +17,11 @@ gem 'devise'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'shoulda-matchers'
+
 end
 
 group :development do
